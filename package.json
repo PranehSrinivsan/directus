@@ -21,7 +21,7 @@
 		"test:e2e": "jest tests -c tests/e2e/jest.config.js",
 		"test:e2e:watch": "npm run test:e2e -- --watch",
 		"posttest:e2e:watch": "ts-node --project ./tests/tsconfig.json --transpile-only ./tests/e2e/setup/teardown.ts",
-		"cli": "cross-env NODE_ENV=development SERVE_APP=false DOTENV_CONFIG_PATH=api/.env ts-node -r dotenv/config --script-mode --transpile-only api/src/cli/run.ts"
+		"cli": "cross-env NODE_ENV=development SERVE_APP=true DOTENV_CONFIG_PATH=api/.env ts-node -r dotenv/config --script-mode --transpile-only api/src/cli/run.ts"
 	},
 	"engines": {
 		"node": ">=16.0.0",
@@ -79,5 +79,8 @@
 	"volta": {
 		"node": "16.13.1",
 		"npm": "8.1.4"
+	},
+	"dependencies": {
+		"directus": "file:api"
 	}
 }
